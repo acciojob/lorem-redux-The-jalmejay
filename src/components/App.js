@@ -11,23 +11,25 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div style={{ maxWidth: "600px", margin: "2rem auto", fontFamily: "sans-serif" }}>
-      
-      {/* TEST 1: INTRO TEXT */}
-      <h1>A short Naration of Lorem Ipsum</h1>
+    <div>
 
-      {/* TEST 3: LOADING STATE */}
+      {/* INTRO TEXT EXACTLY AS CYPRESS EXPECTS */}
+      <h1>Below Contains A title and Body gotten froma random API, Please take your time to Review</h1>
+
+      {/* LOADING */}
       {loading && <h4>Loading...</h4>}
 
-      {/* ERROR */}
-      {error && <h4 style={{ color: "red" }}>Error: {error}</h4>}
-
-      {/* TEST 2 + TEST 4: POSTS AS <li> */}
+      {/* AFTER LOADING SUCCESS */}
       {!loading && !error && (
         <ul>
-          <li><strong>{title}</strong>: {body}</li>
+          <li>{title}</li>
+          <li>{body}</li>
         </ul>
       )}
+
+      {/* ERROR */}
+      {error && <h4>Error loading data</h4>}
+
     </div>
   );
 };
