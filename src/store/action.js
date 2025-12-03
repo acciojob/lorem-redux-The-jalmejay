@@ -18,7 +18,7 @@ export const fetchLorem = () => {
   return (dispatch) => {
     dispatch(fetchLoremRequest());
 
-    fetch("https://api.lorem.com/ipsum")
+    fetch("/ipsum")
     // fetch("https://lorem-api.com/api")
       .then((response) => {
         if (!response.ok) {
